@@ -39,7 +39,7 @@ var (
 // For advanced uses, use MakeParams to create Params from any struct.
 type Params map[string]interface{}
 
-// Makes a new Params instance by given data.
+// MakeParams: Makes a new Params instance by given data.
 // Data must be a struct or a map with string keys.
 // MakeParams will change all struct field name to lower case name with underscore.
 // e.g. "FooBar" will be changed to "foo_bar".
@@ -109,7 +109,7 @@ func makeParams(value reflect.Value) (params Params) {
 	return
 }
 
-// Encodes params to query string.
+// Encode: Encodes params to query string.
 // If map value is not a string, Encode uses json.Marshal() to convert value to string.
 //
 // Encode will panic if Params contains values that cannot be marshalled to json string.
